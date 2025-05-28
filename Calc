@@ -69,4 +69,19 @@ public class Calculadora {
                 case 3: 
                     System.out.println("Multiplicación: " + num1 + " * " + num2 + " = " + calc.multiplicar(num1, num2));
                     break;
-               
+                case 4: 
+                    System.out.println("Division: " + num1 + " / " + num2 + " = " + calc.dividir(num1, num2));
+                    break;
+                case 5:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Opción no válida");
+            }
+            
+            System.out.println("Último resultado: " + calc.getResultado());
+        } while(opcion != 5);
+        
+        scanner.close();
+    }
+}
