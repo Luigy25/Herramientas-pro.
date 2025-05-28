@@ -35,10 +35,6 @@ public class Calculadora {
         return resultado;
     }
     
-    public double getResultado() {
-        return resultado;
-    }
-    
     public static void main(String[] args) {
         Calculadora calc = new Calculadora();
         Scanner scanner = new Scanner(System.in);
@@ -79,7 +75,6 @@ public class Calculadora {
                     System.out.println("Opción no válida");
             }
             
-            System.out.println("Último resultado: " + calc.getResultado());
         } while(opcion != 5);
         
         scanner.close();
