@@ -1,0 +1,72 @@
+package com.ejercicio;
+
+import java.util.Scanner;
+
+public class Calculadora {
+    
+    private double resultado;
+
+    public Calculadora() {
+        this.resultado = 0;
+    }
+    
+    public double sumar(double a, double b) {
+        resultado = a + b;
+        return resultado;
+    }
+    
+    public double restar(double a, double b) {
+        resultado = a - b;
+        return resultado;
+    }
+    
+    public double multiplicar(double a, double b) {
+        resultado = a * b;
+        return resultado;
+    }
+    
+    public double dividir(double a, double b) {
+        if (b != 0) {
+            resultado = a / b;
+        } else {
+            System.out.println("No se puede dividir por cero");
+            resultado = Double.NaN; // Not a Number para indicar error
+        }
+        return resultado;
+    }
+    
+    public double getResultado() {
+        return resultado;
+    }
+    
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+        Scanner scanner = new Scanner(System.in);
+        double num1, num2;
+        int opcion = 0;
+
+        do {
+            System.out.println("Digite el primer numero");
+            num1 = scanner.nextDouble();
+            System.out.println("Digite el segundo numero");
+            num2 = scanner.nextDouble();
+            
+            System.out.println("1. Suma");
+            System.out.println("2. Resta");
+            System.out.println("3. Multiplicacion");
+            System.out.println("4. Division");
+            System.out.println("5. Salir");
+            System.out.println("Digite la opcion que desea: ");
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1: 
+                    System.out.println("Suma: " + num1 + " + " + num2 + " = " + calc.sumar(num1, num2));
+                    break;
+                case 2: 
+                    System.out.println("Resta: " + num1 + " - " + num2 + " = " + calc.restar(num1, num2));
+                    break;
+                case 3: 
+                    System.out.println("Multiplicación: " + num1 + " * " + num2 + " = " + calc.multiplicar(num1, num2));
+                    break;
+               
